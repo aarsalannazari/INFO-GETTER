@@ -1,0 +1,7 @@
+https://visualstudio.com/wp-content/plugins//akismet
+https://visualstudio.com/wp-content/plugins//hint
+https://visualstudio.com/wp-content/plugins//hints
+https://visualstudio.com/wp-content/plugins//hired-wp
+https://visualstudio.com/wp-content/plugins//hirog-server-termine-und-einsatze-widget
+https://visualstudio.com/wp-content/plugins//hiorgserver-terminliste
+https://visualstudio.com/wp-content/plugins//classic-editor

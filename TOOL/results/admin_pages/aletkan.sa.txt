@@ -1,0 +1,3 @@
+http://aletkan.sa/admin/
+http://aletkan.sa/admin/index.php
+http://aletkan.sa/admin/controlpanel.php

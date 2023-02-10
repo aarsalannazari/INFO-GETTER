@@ -1,0 +1,7 @@
+https://php.net/wp-content/plugins/akismet
+https://php.net/wp-content/plugins/hint
+https://php.net/wp-content/plugins/hints
+https://php.net/wp-content/plugins/hired-wp
+https://php.net/wp-content/plugins/hirog-server-termine-und-einsatze-widget
+https://php.net/wp-content/plugins/hiorgserver-terminliste
+https://php.net/wp-content/plugins/classic-editor
