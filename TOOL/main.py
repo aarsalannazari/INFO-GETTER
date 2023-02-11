@@ -1,11 +1,11 @@
 # Imports:
 
-import functions
-from modules import whoiis,ddns,google_map,subdomain,portscanner
-from modules import plugins,admin_finder,website_information,http_header
-from os      import system
-from time    import sleep
-from pprint  import pprint
+from TOOL         import functions
+from TOOL.modules import whoiis,ddns,google_map,subdomain,portscanner
+from TOOL.modules import plugins,admin_finder,website_information,http_header
+from os           import system
+from time         import sleep
+from pprint       import pprint
 
 # Definition:
 
