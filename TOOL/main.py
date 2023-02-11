@@ -23,7 +23,7 @@ YELLOW,CYAN,LIGHTCYAN,WHITE,RESET=functions.YELLOW,functions.CYAN,functions.LIGH
 
 banner_options()
 
-while True:
+while True :
     try:
         num=input(f" {RED} [+] {WHITE}Enter a number from the list : {LIGHTGREEN}")
 
