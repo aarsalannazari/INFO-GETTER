@@ -6,7 +6,7 @@ from socket import socket,AF_INET,SOCK_STREAM,gaierror
 
 class Portscanner :
 
-    def __init__(self,ip: str,rrange: str,GREEN: str,RED :str,RESET: str) :
+    def __init__(self,GREEN:str,RED :str,RESET: str,ip: str,rrange) :
 
         self.ip,self.range = ip,rrange
         self.GREEN,self.RED,self.RESET = GREEN,RED,RESET
@@ -14,7 +14,9 @@ class Portscanner :
     def Scan(self) :
 
         rrange = self.range.split("-")
-
+        if rrange == [''] :
+            rrange = ['1','65535']
+            
         try:
             for port in range(int(rrange[0]),int(rrange[1])+1) :
 

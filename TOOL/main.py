@@ -121,10 +121,10 @@ while True :
         elif num == '8' : #==> Port Scanner
 
             system('cls'or'clear')
-            ip = input(f" {RED} [8] {WHITE}Enter an IP : {LIGHTGREEN}")
-            rrange = input(f" {RED} [8] {WHITE}Enter a range of port : {LIGHTGREEN}")
+            ip = input(f" {RED} [*] {WHITE}Enter an IP : {LIGHTGREEN}")
+            rrange = input(f" {RED} [*] {WHITE}Enter a range of port [for example ==> 2-500] (default ==> all ==> 1-65535)  : {LIGHTGREEN}")
             print('\n')
-            port_scanner = portscanner.Portscanner(ip,rrange,GREEN,RED,RESET)
+            port_scanner = portscanner.Portscanner(GREEN,RED,RESET,ip,rrange)
             _license = input(f" {RED} [8] {WHITE} Which option [ all ports ==> 1 ] or [ open ports ==> 2 ]: {LIGHTGREEN}")
             
             if _license == '1' : 
