@@ -5,4 +5,3 @@ urllib3==1.26.12
 pyngrok==5.2.1
 ipwhois==0.15.1
 whois==0.9.27
-keyboard==0.13.5
