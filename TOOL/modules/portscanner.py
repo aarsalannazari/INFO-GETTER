@@ -42,6 +42,11 @@ class Portscanner :
         try:
             for port in range(int(rrange[0]),int(rrange[1])+1) :
 
+                rrange = self.range.split("-")
+
+                if rrange == [''] :
+                    rrange = ['1','65535']
+                    
                 s = socket(AF_INET,SOCK_STREAM)
                 result = s.connect_ex((self.ip,port))
                 if result == 0 :
