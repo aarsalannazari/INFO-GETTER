@@ -6,6 +6,7 @@ download
 admin
 store
 developers
+web
 www2.l
 docs
 www2
