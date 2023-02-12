@@ -7,6 +7,9 @@ admin
 store
 developers
 docs
+www2
+l
+www2.l
 mail
 dl
 blog
