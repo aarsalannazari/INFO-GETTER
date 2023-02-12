@@ -11,9 +11,9 @@ from time               import sleep
 def Discover_Subdomains(domain,CYAN,BLUE,RESET,RED,GREEN) :
 	
     try :
-    	file = open("modules/subdomains.txt")
+        file = open("modules/subdomains.txt")
     except :
-    	file = open("TOOL/modules/subdomains.txt")
+        file = open("TOOL/modules/subdomains.txt")
     session = Session()
     retry = Retry(connect=3,backoff_factor=0.5)
     adaptor = HTTPAdapter(max_retries=retry)
@@ -50,16 +50,25 @@ def Discover_Subdomains(domain,CYAN,BLUE,RESET,RED,GREEN) :
                 print(f"{GREEN}[{i}/{count}] {BLUE} Discovered Subdomain : {CYAN} {url}{RESET}" )
                 discovered_Subdomains.append(url)
 
-                with open(f"results/subdomains/{domain}.txt","w") as f :
-                    for subdomain in discovered_Subdomains :
-                        print(subdomain,file=f)     
+                try :
+                    with open(f"results/subdomains/{domain}.txt","w") as f :
+                        for subdomain in discovered_Subdomains :
+                            print(subdomain,file=f)
+                except :
+                    with open(f"TOOL/results/subdomains/{domain}.txt","w") as f :
+                        for subdomain in discovered_Subdomains :
+                            print(subdomain,file=f)
 
         else :
             print(f"{GREEN}[{i}/{count}] {BLUE} Discovered Subdomain : {CYAN} {urls}{RESET}" )
             discovered_Subdomains.append(urls)
-
-            with open(f"results/subdomains/{domain}.txt","w") as f :
-                for subdomain1 in discovered_Subdomains :
-                    print(subdomain1,file=f)
+            try :
+                with open(f"results/subdomains/{domain}.txt","w") as f :
+                    for subdomain1 in discovered_Subdomains :
+                        print(subdomain1,file=f)
+            except :
+                with open(f"TOOL/results/subdomains/{domain}.txt","w") as f :
+                    for subdomain1 in discovered_Subdomains :
+                        print(subdomain1,file=f)
 
 ########################### END ###########################
