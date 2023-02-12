@@ -5,3 +5,5 @@ https://code.google.com
 https://download.google.com
 https://admin.google.com
 https://store.google.com
+https://developers.google.com
+https://docs.google.com
