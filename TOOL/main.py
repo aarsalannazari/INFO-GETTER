@@ -9,8 +9,14 @@ from pprint  import pprint
 
 # Definition:
 
+def clear() :
+    try :
+        system('cls')
+    except :
+        system('clear')
+
 def banner_options() :
-    system('cls'or'clear')
+    clear()
     functions.Tools.banner()
     functions.Tools.options()
 
@@ -29,7 +35,7 @@ while True :
 
         if num == '1' : #==> Whois
 
-            system('cls'or'clear')
+            clear()
             domain = input(f" {RED} [1] {WHITE}Enter a Domain : {LIGHTGREEN}")
             whois = whoiis.Information(num)
             res_Domain = whois.Domain_info(domain)
@@ -43,7 +49,7 @@ while True :
 
         elif num == '2' : #==> Dns Checker
 
-            system('cls'or'clear')
+            clear()
             domain = input(f" {RED} [2] {WHITE}Enter a Domain : {LIGHTGREEN}")
             Dns=ddns.Dns_Checker(domain)
             Dns.options()
@@ -80,7 +86,7 @@ while True :
         
         elif num == '4' : #==> Sub Domains
 
-            system('cls'or'clear')
+            clear()
             domain = input(f" {RED} [4] {WHITE}Enter a Domain : {LIGHTGREEN}")
             print('\n')
             subdomain.Discover_Subdomains(domain,CYAN,BLUE,RESET,RED,GREEN)
@@ -90,7 +96,7 @@ while True :
 
         elif num == '5' : #==> WordPress Plugin
 
-            system('cls'or'clear')
+            clear()
             domain = input(f" {RED} [5] {WHITE}Enter a Domain : {LIGHTGREEN}")
             print('\n')
             plugins.Discover_Plugins(domain,CYAN,BLUE,RESET,RED,GREEN)
@@ -100,7 +106,7 @@ while True :
 
         elif num == '6' : #==> Admin Finder
 
-            system('cls'or'clear')
+            clear()
             domain = input(f" {RED} [6] {WHITE}Enter a Domain : {LIGHTGREEN}")
             time_sleep = input(f" {RED} [6] {WHITE}Enter time interval between two requests  : {LIGHTGREEN}")
             print('\n')
@@ -111,7 +117,7 @@ while True :
 
         elif num == '7' : #==> Website Information
 
-            system('cls'or'clear')
+            clear()
             domain = input(f" {RED} [7] {WHITE}Enter a Domain : {LIGHTGREEN}")
             print('\n')
             website_information.Fetch_info(domain,CYAN,RESET)
@@ -120,7 +126,7 @@ while True :
 
         elif num == '8' : #==> Port Scanner
 
-            system('cls'or'clear')
+            clear()
             ip = input(f" {RED} [*] {WHITE}Enter an IP : {LIGHTGREEN}")
             rrange = input(f" {RED} [*] {WHITE}Enter a range of port [for example ==> 2-500] (default ==> all ==> 1-65535)  : {LIGHTGREEN}")
             print('\n')
@@ -140,7 +146,7 @@ while True :
 
         elif num == '9' : #==> HTTP Header
 
-            system('cls'or'clear')
+            clear()
             domain = input(f" {RED} [9] {WHITE}Enter a Domain : {LIGHTGREEN}")
             print('\n')
             res = http_header.http_header(domain)
@@ -153,7 +159,7 @@ while True :
         elif num == '00' : #==> Exit
             print("Bye")
             sleep(1)
-            system('cls'or'clear')
+            clear()
             exit()
         
     except Exception as e:
