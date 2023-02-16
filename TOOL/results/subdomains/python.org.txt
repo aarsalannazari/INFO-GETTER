@@ -1,4 +1,0 @@
-https://www.python.org
-https://docs.python.org
-https://mail.python.org
-https://blog.python.org

@@ -1,5 +1,0 @@
-https://www.kali.org
-https://download.kali.org
-https://docs.kali.org
-https://http.kali.org
-http://marketplace.kali.org
