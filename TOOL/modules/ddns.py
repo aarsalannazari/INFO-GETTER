@@ -1,7 +1,7 @@
 # Imports:
 
-from colorama import Fore
-from dns      import resolver
+from dns            import resolver
+from colorama       import Fore
 
 # Colors:
 

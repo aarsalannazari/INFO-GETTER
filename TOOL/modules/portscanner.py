@@ -13,6 +13,8 @@ class Portscanner :
 
     def Scan(self) :
 
+        if self.ip == '' :
+            self.ip = 'localhost'
         rrange = self.range.split("-")
         if rrange == [''] :
             rrange = ['1','65535']

@@ -1,9 +1,10 @@
 #Import Librarys:
 
-from colorama import Fore
+from colorama import Fore,Style
 
 #Colors:
 
+STYLE = Style.BRIGHT
 GREEN,LIGHTGREEN,BLUE,MAGENTA,RED=Fore.GREEN,Fore.LIGHTGREEN_EX,Fore.BLUE,Fore.MAGENTA,Fore.RED
 YELLOW,CYAN,LIGHTCYAN,WHITE,RESET=Fore.YELLOW,Fore.CYAN,Fore.LIGHTCYAN_EX,Fore.WHITE,Fore.RESET
 
@@ -12,7 +13,7 @@ YELLOW,CYAN,LIGHTCYAN,WHITE,RESET=Fore.YELLOW,Fore.CYAN,Fore.LIGHTCYAN_EX,Fore.W
 class Tools :
 
     def banner(self=None):
-        print(f"""{BLUE}
+        print(f"""{STYLE}{BLUE}
  __  .__   __.  _______   ______        _______  _______ .___________.___________. _______ .______      
 |  | |  \ |  | |   ____| /  __  \      /  _____||   ____||           |           ||   ____||   _  \    
 |  | |   \|  | |  |__   |  |  |  |    |  |  __  |  |__   `---|  |----`---|  |----`|  |__   |  |_)  |   

@@ -3,6 +3,7 @@
 from TOOL         import functions
 from TOOL.modules import whoiis,ddns,google_map,subdomain,portscanner
 from TOOL.modules import plugins,admin_finder,website_information,http_header
+from random       import randint
 from os           import system
 from time         import sleep
 from pprint       import pprint
@@ -17,11 +18,13 @@ def clear() :
 
 def banner_options() :
     clear()
+    STYLE
     functions.Tools.banner()
     functions.Tools.options()
 
 # Colors:
 
+STYLE=functions.STYLE
 GREEN,LIGHTGREEN,BLUE,MAGENTA,RED=functions.GREEN,functions.LIGHTGREEN,functions.BLUE,functions.MAGENTA,functions.RED
 YELLOW,CYAN,LIGHTCYAN,WHITE,RESET=functions.YELLOW,functions.CYAN,functions.LIGHTCYAN,functions.WHITE,functions.RESET
 
@@ -31,7 +34,7 @@ banner_options()
 
 while True :
     try:
-        num=input(f" {RED} [+] {WHITE}Enter a number from the list : {LIGHTGREEN}")
+        num=input(f" {STYLE}{RED} [+] {WHITE}Enter a number from the list : {LIGHTGREEN}")
 
         if num == '1' : #==> Whois
 
@@ -58,14 +61,14 @@ while True :
             if num == '1' :
 
                 res = Dns.A_record()
-                print(f"\n {RED} [+] {WHITE}ip{RED} ==> {CYAN}{res}{RESET}")
+                print(f"\n {RED} [+] {WHITE}IP{RED} ==> {CYAN}{res}{RESET}")
                 input(f"\n{MAGENTA}Press Enter to continue : {RESET}")
                 banner_options()
 
             elif num == '2' :
 
                 res = Dns.Cname()
-                print(f"\n {RED} [+] {WHITE}Main Domain{RED}: ==> {CYAN}{res}{RESET}")
+                print(f"\n {RED} [+] {BLUE}Domain{RED} ==> {CYAN}{domain}{WHITE} , {GREEN}C Name{RED} ==> {CYAN}{res}{RESET}")
                 input(f"\n{MAGENTA}Press Enter to continue : {RESET}")
                 banner_options()
 
@@ -127,20 +130,23 @@ while True :
         elif num == '8' : #==> Port Scanner
 
             clear()
-            ip = input(f" {RED} [*] {WHITE}Enter an IP : {LIGHTGREEN}")
+            ip = input(f" {RED} [*] {WHITE}Enter an IP (default ==> localhost): {LIGHTGREEN}")
             rrange = input(f" {RED} [*] {WHITE}Enter a range of port [for example ==> 2-500] (default ==> all ==> 1-65535)  : {LIGHTGREEN}")
-            print('\n')
             port_scanner = portscanner.Portscanner(GREEN,RED,RESET,ip,rrange)
-            _license = input(f" {RED} [8] {WHITE} Which option [ all ports ==> 1 ] or [ open ports ==> 2 ]: {LIGHTGREEN}")
-            
-            if _license == '1' : 
+            while True :
+                _license = input(f" {RED} [*] {WHITE} Which option [ all ports ==> 1 ] or [ open ports ==> 2 ] (default ==> all ==> 2): {LIGHTGREEN}")
                 print('\n')
-                portscanner.Portscanner.Scan(port_scanner)
-            elif _license == '2' :
-                print('\n')
-                portscanner.Portscanner.Scan_o(port_scanner)
-            else :
-                print(f"{RED} please correct the option ! {RESET}")
+                
+                if _license == '1' : 
+                    print('\n')
+                    portscanner.Portscanner.Scan(port_scanner)
+                    break
+                elif _license == '2' or _license == '' :
+                    print('\n')
+                    portscanner.Portscanner.Scan_o(port_scanner)
+                    break
+                else :
+                    print(f"{RED} please correct the option ! {RESET}")
             input(f"\n{MAGENTA}Press Enter to continue : {RESET}")
             banner_options() 
 
@@ -156,11 +162,22 @@ while True :
             input(f"\n{MAGENTA}Press Enter to continue : {RESET}")
             banner_options() 
 
-        elif num == '00' : #==> Exit
-            print("Bye")
-            sleep(1)
+        elif num == '00' or num == '0' : #==> Exit
+            for i in range(randint(1,4)) :
+                clear()
+                print(f'{YELLOW}closing progress .{RESET}')
+                sleep(0.4)
+                clear()
+                print(f'{YELLOW}closing progress . .{RESET}')
+                sleep(0.4)
+                clear()
+                print(f'{YELLOW}closing progress . . .{RESET}')
+                sleep(0.4)
             clear()
             exit()
+        
+        else :
+            raise ValueError(f'{RED}You must to enter number of list !{RESET}')
         
     except Exception as e:
         print(f"\n{RED}Error : {e}")
