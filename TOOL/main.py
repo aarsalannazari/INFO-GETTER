@@ -134,7 +134,7 @@ while True :
             rrange = input(f" {RED} [*] {WHITE}Enter a range of port [for example ==> 2-500] (default ==> all ==> 1-65535)  : {LIGHTGREEN}")
             port_scanner = portscanner.Portscanner(GREEN,RED,RESET,ip,rrange)
             while True :
-                _license = input(f" {RED} [*] {WHITE} Which option [ all ports ==> 1 ] or [ open ports ==> 2 ] (default ==> all ==> 2): {LIGHTGREEN}")
+                _license = input(f" {RED} [*] {WHITE} Which option [ all ports ==> 1 ] or [ open ports ==> 2 ] (default ==> open ports ==> 2): {LIGHTGREEN}")
                 print('\n')
                 
                 if _license == '1' : 
