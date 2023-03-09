@@ -5,3 +5,4 @@ urllib3==1.26.12
 pyngrok==5.2.1
 ipwhois==0.15.1
 whois==0.9.27
+getmac==0.9.2
