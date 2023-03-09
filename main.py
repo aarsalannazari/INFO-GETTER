@@ -5,15 +5,17 @@ from TOOL.modules import whoiis,ddns,google_map,subdomain,portscanner
 from TOOL.modules import plugins,admin_finder,website_information,http_header
 from random       import randint
 from os           import system
+from sys          import platform
 from time         import sleep
 from pprint       import pprint
 
 # Definition:
 
 def clear() :
-    try :
+    if platform.startswith() == 'win' :
         system('cls')
-    except :
+        
+    else :
         system('clear')
 
 def banner_options() :
