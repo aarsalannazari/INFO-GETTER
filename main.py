@@ -12,9 +12,9 @@ from pprint       import pprint
 # Definition:
 
 def clear() :
-    if platform.startswith() == 'win' :
+    if platform.startswith('win') :
         system('cls')
-        
+
     else :
         system('clear')
 
