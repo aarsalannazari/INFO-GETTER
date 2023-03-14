@@ -157,11 +157,11 @@ while True :
                 
             if _license == '1' : 
                 print('\n')
-                portscanner.Portscanner.Scan(port_scanner)
+                port_scanner.Scan()
 
             elif _license == '2' or _license == '' :
                 print('\n')
-                portscanner.Portscanner.Scan_o(port_scanner)
+                port_scanner.Scan_o()
             
             input(f"\n{MAGENTA}Press Enter to continue : {RESET}")
             banner_options() 
