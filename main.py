@@ -1,7 +1,7 @@
 # Imports:
 
 from TOOL         import functions
-from TOOL.modules import whoiis,ddns,google_map,subdomain,portscanner
+from TOOL.modules import whoiis,ddns,google_map,subdomain,portscanner,ipscanner
 from TOOL.modules import plugins,admin_finder,website_information,http_header
 from random       import randint
 from os           import system
@@ -129,33 +129,48 @@ while True :
             input(f"\n{MAGENTA}Press Enter to continue : {RESET}")
             banner_options() 
 
-        elif num == '8' : #==> Port Scanner
+        elif num == '8' : #==> IP Scanner
+
+            clear()
+            ip = input(f" {RED} [*] {WHITE}Enter range of IP (default ==> from 192.168.1.0 to 192.168.1.255): {LIGHTGREEN}")
+            time_out = input(f' {RED} [*] {WHITE}What time do you like to timeout of 1 IP? (default ==> 0.7 second): {LIGHTGREEN}')
+            _license = input(f" {RED} [*] {WHITE} Which option [ all IPs ==> 1 ] or [ Active IPs ==> 2 ] (default ==> Active IPs ==> 2): {LIGHTGREEN}")
+
+            if _license == '1' : 
+                print('\n')
+                ipscanner.IP_Scanner.IP_Scanner_a(ip,time_out,RED,GREEN,RESET)
+
+            elif _license == '2' or _license == '' :
+                print('\n')
+                ipscanner.IP_Scanner.IP_Scanner_o(ip,time_out,GREEN,RESET)
+
+            input(f"\n{MAGENTA}Press Enter to continue : {RESET}")
+            banner_options()
+
+        elif num == '9' : #==> Port Scanner
 
             clear()
             ip = input(f" {RED} [*] {WHITE}Enter an IP (default ==> localhost): {LIGHTGREEN}")
             rrange = input(f" {RED} [*] {WHITE}Enter a range of port [for example ==> 2-500] (default ==> all ==> 1-65535)  : {LIGHTGREEN}")
             port_scanner = portscanner.Portscanner(GREEN,RED,RESET,ip,rrange)
-            while True :
-                _license = input(f" {RED} [*] {WHITE} Which option [ all ports ==> 1 ] or [ open ports ==> 2 ] (default ==> open ports ==> 2): {LIGHTGREEN}")
-                print('\n')
+            _license = input(f" {RED} [*] {WHITE} Which option [ all ports ==> 1 ] or [ open ports ==> 2 ] (default ==> open ports ==> 2): {LIGHTGREEN}")
+            print('\n')
                 
-                if _license == '1' : 
-                    print('\n')
-                    portscanner.Portscanner.Scan(port_scanner)
-                    break
-                elif _license == '2' or _license == '' :
-                    print('\n')
-                    portscanner.Portscanner.Scan_o(port_scanner)
-                    break
-                else :
-                    print(f"{RED} please correct the option ! {RESET}")
+            if _license == '1' : 
+                print('\n')
+                portscanner.Portscanner.Scan(port_scanner)
+
+            elif _license == '2' or _license == '' :
+                print('\n')
+                portscanner.Portscanner.Scan_o(port_scanner)
+            
             input(f"\n{MAGENTA}Press Enter to continue : {RESET}")
             banner_options() 
 
-        elif num == '9' : #==> HTTP Header
+        elif num == '10' : #==> HTTP Header
 
             clear()
-            domain = input(f" {RED} [9] {WHITE}Enter a Domain : {LIGHTGREEN}")
+            domain = input(f" {RED} [10] {WHITE}Enter a Domain : {LIGHTGREEN}")
             print('\n')
             res = http_header.http_header(domain)
             print(f"{RED} Results : \n{CYAN}")

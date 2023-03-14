@@ -57,5 +57,14 @@ class Portscanner :
 
         finally :
             print(f"{self.RED} job finished ! {self.RESET}")
+
+if __name__ == '__main__' :
+
+    from colorama import *
+    print(f'{Fore.BLUE}this is a demo of this module ')
+    print('if you dont see any ports it may be your host does not any open ports')
+    print(f'its a test from localhost ports{Fore.RESET}')
+    test = Portscanner(Fore.GREEN,Fore.RED,Fore.RESET,'127.0.0.1','1-65535')
+    test.Scan_o()
             
 ########################### END ###########################

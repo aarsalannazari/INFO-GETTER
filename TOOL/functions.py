@@ -40,8 +40,9 @@ class Tools :
     [ 5 ]  -  WordPress Plugins
     [ 6 ]  -  Admin Page Finder
     [ 7 ]  -  WebSite Information
-    [ 8 ]  -  Port Scanner
-    [ 9 ]  -  Show HTTP Header
+    [ 8 ]  -  IP Scanner
+    [ 9 ]  -  Port Scanner
+    [ 10 ] -  Show HTTP Header
       00   -  Exit 
     {RESET}  
         """)
