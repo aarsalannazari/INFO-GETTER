@@ -1,8 +1,6 @@
 # Imports:
 
-from requests import get
 from colorama import Fore
-from os       import system
 from pprint   import pprint
 from ipapi    import location
 
