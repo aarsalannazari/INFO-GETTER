@@ -1,12 +1,14 @@
 # Imports :
 
-from socket import *
+from socket   import *
 
 # Definition :
 
+class _24_bit_of_ip : ...
+
 class IP_Scanner :
 
-    def IP_Scanner_a(ip24 : str,time_out : float,RED,GREEN,RESET) :
+    def IP_Scanner_a(ip24 : _24_bit_of_ip,time_out : float,RED,GREEN,RESET,BRIGHT,NORMAL) :
         """
         NOTE : IP address must 24 first bit of address with out the . of 24th bit
         for timeout 0.7 second is good.
@@ -44,11 +46,11 @@ class IP_Scanner :
 
                 if not ports :
 
-                    print(f"{RED} [-] {ip} is Not Found !{RESET}")
+                    print(f"{BRIGHT}{RED} [-] {ip} is Not Found !{RESET}")
 
                 else : 
 
-                    print(f"{GREEN} [+] {ip} is Found {RESET}")
+                    print(f"{BRIGHT}{GREEN} [+] {ip} is Found {RESET}")
 
                 s.close()
 
@@ -116,11 +118,11 @@ class IP_Scanner :
 
 if __name__ == '__main__' :
 
-    from colorama import Fore
+    from colorama import Fore,Style
     print(f'{Fore.BLUE}this is a demo of this module ')
     print(f'its a test from range 192.168.1.0 to 192.168.1.255{Fore.RESET}')
     print('\n')
-    IP_Scanner.IP_Scanner_a('192.168.1',0.7,Fore.RED,Fore.GREEN,Fore.RESET)
+    IP_Scanner.IP_Scanner_a('192.168.1',0.7,Fore.RED,Fore.GREEN,Fore.RESET,Style.BRIGHT,Style.NORMAL)
 
 
 

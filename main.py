@@ -1,13 +1,14 @@
 # Imports:
 
 from TOOL         import functions
-from TOOL.modules import whoiis,ddns,google_map,subdomain,portscanner,ipscanner
+from TOOL.modules import ip_location, whoiis,ddns,subdomain,portscanner,ipscanner
 from TOOL.modules import plugins,admin_finder,website_information,http_header
 from random       import randint
 from os           import system
 from sys          import platform
 from time         import sleep
 from pprint       import pprint
+from socket       import gethostbyname
 
 # Definition:
 
@@ -87,7 +88,19 @@ while True :
 
         elif num == '3' : #==> Ip location
 
-            google_map.generate()
+            clear()
+            domain = input(f" {RED} [3] {WHITE}Enter a Domain (default ==> your ip): {LIGHTGREEN}")
+            if domain[0:8] == 'https://' :
+                domain = domain[8:]
+            elif domain[0:7] == 'http://' :
+                domain = domain[7:]
+            IP = gethostbyname(domain)
+            print(f'{YELLOW}Target Domain : {GREEN}{domain}{RESET}')
+            print(f'{YELLOW}  Target IP : {GREEN}{IP}{RESET}')
+            ip_location.info(IP)
+            input(f"\n{MAGENTA}Press Enter to continue : {RESET}")
+            banner_options() 
+        
         
         elif num == '4' : #==> Sub Domains
 

@@ -1,8 +1,10 @@
 # Imports:
 
-from pyngrok  import ngrok
+from requests import get
 from colorama import Fore
 from os       import system
+from pprint   import pprint
+from ipapi    import location
 
 # Colors:
 
@@ -11,10 +13,13 @@ YELLOW,CYAN,LIGHTCYAN,WHITE,RESET=Fore.YELLOW,Fore.CYAN,Fore.LIGHTCYAN_EX,Fore.W
 
 # Definition:
 
-def generate() :
-    domain=ngrok.connect()
-    print(f'{YELLOW}Take This Domain to Your Target  ===> {RED}{domain}{RESET}')
-    system("sudo php -S localhost:80")
-    input()
+def info(ip) :
+    result = location(ip)
+    print(f'{CYAN}')
+    pprint(result)
+    print({RESET})
+
+if __name__ == '__main__' :
+    info('')
 
 ########################### END ###########################
