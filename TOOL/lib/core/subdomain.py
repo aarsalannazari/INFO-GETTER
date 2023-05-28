@@ -10,10 +10,7 @@ from time               import sleep
 
 def Discover_Subdomains(domain,CYAN,BLUE,RESET,RED,GREEN) :
 	
-    try :
-        file = open("modules/subdomains.txt")
-    except :
-        file = open("TOOL/modules/subdomains.txt")
+    file = open("TOOL/lib/subdomains.txt")
     session = Session()
     retry = Retry(connect=3,backoff_factor=0.5)
     adaptor = HTTPAdapter(max_retries=retry)

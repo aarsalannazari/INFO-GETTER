@@ -18,7 +18,7 @@ def Admin_finder (domain,time_sleep,CYAN,RED,GREEN,BLUE,RESET) :
     session.mount("http://",adaptor)
     session.mount("https://",adaptor)
 
-    pages = open("modules/admins.txt","r").read()
+    pages = open("TOOL/lib/admins.txt","r").read()
     i = 0
     count = pages.count("\n")+1
     pages = pages.splitlines()

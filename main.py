@@ -1,14 +1,26 @@
 # Imports:
 
-from TOOL         import functions
-from TOOL.modules import ip_location, whoiis,ddns,subdomain,portscanner,ipscanner
-from TOOL.modules import plugins,admin_finder,website_information,http_header
-from random       import randint
-from os           import system
-from sys          import platform
-from time         import sleep
-from pprint       import pprint
-from socket       import gethostbyname
+from TOOL     import functions
+from random   import randint
+from os       import system
+from sys      import platform
+from time     import sleep
+from pprint   import pprint
+from socket   import gethostbyname
+from requests import get
+
+from TOOL.lib.core import (
+    admin_finder ,
+    ddns ,
+    http_header ,
+    ip_location ,
+    ipscanner,
+    plugins,
+    portscanner,
+    subdomain ,
+    whoiis ,
+    website_information
+)
 
 # Definition:
 
@@ -90,11 +102,14 @@ while True :
 
             clear()
             domain = input(f" {RED} [3] {WHITE}Enter a Domain (default ==> your ip): {LIGHTGREEN}")
-            if domain[0:8] == 'https://' :
-                domain = domain[8:]
-            elif domain[0:7] == 'http://' :
-                domain = domain[7:]
-            IP = gethostbyname(domain)
+            if domain :
+                if domain[0:8] == 'https://' :
+                    domain = domain[8:]
+                elif domain[0:7] == 'http://' :
+                    domain = domain[7:]
+                IP = gethostbyname(domain)
+            else :
+                IP = get("https://api.ipify.org").text
             print(f'{YELLOW}Target Domain : {GREEN}{domain}{RESET}')
             print(f'{YELLOW}  Target IP : {GREEN}{IP}{RESET}')
             ip_location.info(IP)

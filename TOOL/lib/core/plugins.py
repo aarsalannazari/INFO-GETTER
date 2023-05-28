@@ -9,7 +9,7 @@ from time               import sleep
 
 def Discover_Plugins(domain,CYAN,BLUE,RESET,RED,GREEN) :
 
-    file = open("modules/plugins.txt")
+    file = open("TOOL/lib/plugins.txt")
     session = Session()
     retry = Retry(connect=3,backoff_factor=0.5)
     adaptor = HTTPAdapter(max_retries=retry)
