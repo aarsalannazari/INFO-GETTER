@@ -66,12 +66,12 @@ def Admin_finder (domain,time_sleep,CYAN,RED,GREEN,BLUE,RESET) :
                 
             elif status == 403 :
 
-                f = open(f"results/admin_pages/{domain}.txt","w")
+                f = open(f"TOOL/results/admin_pages/{domain}.txt","w")
                 f.close()
-                with open(f"results/admin_pages/{domain}.txt") as file :
+                with open(f"TOOL/results/admin_pages/{domain}.txt") as file :
                     res = file.read().splitlines()
                     if full_address not in res :
-                        f = open(f"results/admin_pages/{domain}.txt","a")
+                        f = open(f"TOOL/results/admin_pages/{domain}.txt","a")
                         f.write(full_address+" Forbidden"+"\n")
                         f.close()
 

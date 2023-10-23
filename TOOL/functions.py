@@ -23,9 +23,10 @@ class Tools :
                         {CYAN}    
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                 ~  Coded By  : Amir Arsalan Nazari         ~
-                                ~  WebSite   : (None)                      ~
-                                ~  Telegram  : (None)                      ~
+                                ~  Github    : aarsalannazari              ~
+                                ~  Telegram  : aarsalannazari              ~
                                 ~  Instagram : aarsalannazari              ~
+                                ~  Youtube   : aarsalannazari              ~
                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         {RESET}""")
 

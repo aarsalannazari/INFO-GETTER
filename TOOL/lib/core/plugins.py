@@ -45,7 +45,7 @@ def Discover_Plugins(domain,CYAN,BLUE,RESET,RED,GREEN) :
 
                 print(f"{RED}[{i}/{count}] Not Found Plugin : {plugin}{RESET}" )
 
-        with open(f"results/plugins/{domain}.txt","w") as f :
+        with open(f"TOOL/results/plugins/{domain}.txt","w") as f :
             for plugin in discovered_plugins :
                 print(plugin,file=f)
 
